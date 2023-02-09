@@ -1,8 +1,15 @@
-#This is a comment
+print (10>9)
+#True
 
+print (10 == 9)
+#False
 
-'''
-This is a comment
-written in 
-more that just one line
-'''
+print (10 < 9)
+#False
+
+print(bool("abc"))
+#True
+
+print(bool(0))
+#False
+
