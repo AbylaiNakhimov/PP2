@@ -90,12 +90,12 @@ movies = [
 
 # 2)
 # def result(movies):
-#     lst=[];
+#     list=[];
 #     for i in range(0,len(movies)):
 #         movie=movies[i];
 #         if movie['imdb']>5.5:
-#             lst.append(movie)
-#     return lst
+#             list.append(movie)
+#     return list
 # print(result(movies))
 
 # 3)
