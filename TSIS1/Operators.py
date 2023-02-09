@@ -1,6 +1,6 @@
-print (10 * 5)
+print (10 * 5) #50
 
-print (10 / 2)
+print (10 / 2) #5
 
 fruits = ["apple", "banana"]
 if "apple" in fruits:
