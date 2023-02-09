@@ -11,13 +11,13 @@ txt = " Hello World "
 x = txt.strip() #Hello World"
 
 txt = "Hello World"
-txt = txt.upper()
+txt = txt.upper() #HELLO WORLD
 
 txt = "Hello World"
-txt = txt.lower()
+txt = txt.lower() #hello world
 
 txt = "Hello World"
-txt = txt.replace('H','J')
+txt = txt.replace('H','J') #Jello World
 
 age = 36
 txt = "My name is John, and I am {}"
