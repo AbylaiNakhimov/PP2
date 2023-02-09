@@ -89,8 +89,6 @@
 # a.display()
 
 # 6)
-# numbers = list(map(int, input("Enter a list of numbers, separated by space: ").split()))
-
-# result = list(filter(lambda x: all(x % i != 0 for i in range(2, x)), numbers))
-
-# print("Prime numbers in the list: ", result)
+numbers = list(map(int, input().split()))
+result = list(filter(lambda x: all(x % i != 0 for i in range(2, x)), numbers))
+print(result)
