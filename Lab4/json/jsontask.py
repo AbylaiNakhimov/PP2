@@ -1,6 +1,6 @@
 import json
 
-file = open('01.json', 'r')
+file = open('data.json', 'r')
 js = json.load(file)
 print("Interface Status\n================================================================================")
 print("DN                                                 Description           Speed    MTU  ")
