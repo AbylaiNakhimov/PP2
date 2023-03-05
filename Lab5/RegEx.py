@@ -31,11 +31,11 @@
 # matches = re.findall(r'[A-Z][a-z]+', a)
 # print(matches)
 
-
-import re
-a = input()
-matches = re.findall("a.+b$", a)
-print(matches)
+# 5)
+# import re
+# a = input()
+# matches = re.findall("a.+b$", a)
+# print(matches)
 
 # 6)
 # import re
