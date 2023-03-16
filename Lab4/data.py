@@ -1,8 +1,8 @@
 # 1)
-# from datetime import date, timedelta
-# dt = date.today() - timedelta(5)
-# print('Current Date :',date.today())
-# print('5 days before Current Date :',dt)
+from datetime import date, timedelta
+dt = date.today() - timedelta(5)
+print('Current Date :',date.today())
+print('5 days before Current Date :',dt)
 
 # 2)
 # from datetime import date, timedelta
