@@ -1,8 +1,8 @@
 import pygame
 import random
 import time
-res = 800
-size = 30
+res = 600
+size = 20
 
 x,y = random.randrange(0,res,size), random.randrange(0,res,size)
 apple = random.randrange(0,res,size), random.randrange(0,res,size)
