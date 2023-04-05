@@ -111,7 +111,7 @@ while True:
 
     # To be run if collision occurs between Player and Enemy
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('data/crash.wav').play()
+        pygame.mixer.Sound('data/gameover.wav').play()
         time.sleep(0.5)
 
         DISPLAYSURF.fill(RED)
