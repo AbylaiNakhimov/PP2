@@ -1,8 +1,8 @@
 import pygame
 import random
 import time
-res=800
-size=50
+res = 800
+size = 30
 
 x,y = random.randrange(0,res,size), random.randrange(0,res,size)
 apple = random.randrange(0,res,size), random.randrange(0,res,size)
@@ -15,7 +15,7 @@ screen = pygame.display.set_mode((res,res))
 clock = pygame.time.Clock()
 score = 0
 fps = 10
-game_over=False
+game_over = False
 pygame.mixer.init()  # initialize the mixer module
 score_sound = pygame.mixer.Sound('data/score.wav')  # load the sound effect file
 while not game_over:
