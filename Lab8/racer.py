@@ -88,10 +88,10 @@ all_sprites.add(E1)
 # Adding a new User event
 INC_SPEED = pygame.USEREVENT + 1
 pygame.time.set_timer(INC_SPEED, 1000)
-
+bgsound=pygame.mixer.Sound("data/background.wav")
+bgsound.play()
 # Game Loop
 while True:
-
     # Cycles through all events occurring
     for event in pygame.event.get():
         if event.type == INC_SPEED:
@@ -99,7 +99,6 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-
     DISPLAYSURF.blit(background, (0, 0))
     scores = font_small.render(str(SCORE), True, BLACK)
     DISPLAYSURF.blit(scores, (10, 10))
@@ -123,6 +122,6 @@ while True:
         time.sleep(3)
         pygame.quit()
         sys.exit()
-
+        
     pygame.display.update()
     FramePerSec.tick(FPS)
