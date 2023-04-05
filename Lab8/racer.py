@@ -53,7 +53,7 @@ font = pygame.font.SysFont(None, 30)
 # sounds
 gameOverSound = pygame.mixer.Sound('data/crash.wav')
 pygame.mixer.music.load('data/car.wav')
-laugh = pygame.mixer.Sound('data/laugh.wav')
+laugh = pygame.mixer.Sound('data/gameover.wav')
 
 
 # images
