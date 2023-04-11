@@ -47,7 +47,7 @@ def generate_food(snake_list):
     
     return food_x, food_y, food_weight
 
-
+            
 def set_game_speed(level):
     # set game speed based on level
     if level == 1:
@@ -153,12 +153,12 @@ def snake_game():
         speed = set_game_speed(level)
         
         # set game screen color
-        game_screen.fill(white)
+        game_screen.fill(black)
         
         
         # draw snake and food
         for block in snake_list:
-            pygame.draw.rect(game_screen, black, [block[0], block[1], block_size, block_size])
+            pygame.draw.rect(game_screen, green, [block[0], block[1], block_size, block_size])
         pygame.draw.rect(game_screen, red, [food_pos[0], food_pos[1], block_size, block_size])
         
         # display score and update screen
