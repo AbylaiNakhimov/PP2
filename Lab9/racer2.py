@@ -4,7 +4,7 @@ import random, time
  
 pygame.init()
  
-FPS = 45
+FPS = 60
 FramePerSec = pygame.time.Clock()
   
 SCREEN_WIDTH = 400
@@ -22,6 +22,7 @@ coins = 0
 #Create a white screen 
 DISPLAYSURF = pygame.display.set_mode((400,600))
 pygame.display.set_caption("Racer")
+
 class Enemy(pygame.sprite.Sprite):
       def __init__(self):
         super().__init__() 
@@ -52,6 +53,7 @@ class Player(pygame.sprite.Sprite):
         if self.rect.right < SCREEN_WIDTH:        
               if pressed_keys[K_RIGHT]:
                   self.rect.move_ip(7, 0)
+
 class Coin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
@@ -68,11 +70,13 @@ class Coin(pygame.sprite.Sprite):
         elif self.rect.colliderect(P1):
             coinscore += random.randint(1, 5)
             self.rect.top = -62
-            self.rect.center = (random.randint(32, SCREEN_WIDTH-32), -31)    
+            self.rect.center = (random.randint(32, SCREEN_WIDTH-32), -31)   
+             
 #Setting up Sprites        
 P1 = Player()
 E1 = Enemy()
 C1 = Coin()
+
 #Creating Sprites Groups
 enemies = pygame.sprite.Group()
 enemies.add(E1)
@@ -81,6 +85,7 @@ all_sprites.add(P1)
 all_sprites.add(E1)
 Coins = pygame.sprite.Group()
 Coins.add(C1)
+
 #Adding a new User event 
 INC_SPEED = pygame.USEREVENT + 1
 pygame.time.set_timer(INC_SPEED, 1000)
@@ -90,6 +95,7 @@ coin_x = 0
 y = 0
 bgsound = pygame.mixer.Sound("data/background.wav")
 bgsound.play()
+
 #Game Loop
 while True:
     #Cycles through all events occurring  
