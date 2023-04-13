@@ -10,8 +10,8 @@ FramePerSec = pygame.time.Clock()
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 600
 SPEED = 5
-SCORE = 0
-coinscore=0
+SCORE = 1
+coinscore = 0
 font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, "black") 
@@ -57,7 +57,7 @@ class Player(pygame.sprite.Sprite):
 class Coin(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image=coin[coini]
+        self.image = coin[coini]
         self.rect = self.image.get_rect() 
         self.rect.center = (random.randint(32, SCREEN_WIDTH-32), -31)
         self.a =random.randint(600,1000)    
@@ -101,7 +101,7 @@ while True:
     #Cycles through all events occurring  
     for event in pygame.event.get():
         if event.type == INC_SPEED:
-              SPEED += 0.3     
+              SPEED += 1    
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
