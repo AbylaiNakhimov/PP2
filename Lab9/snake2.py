@@ -25,6 +25,7 @@ blue = (50, 153, 213)
 
 # set game fonts
 font_style = pygame.font.SysFont(None, 30)
+score_sound = pygame.mixer.Sound('data/score.wav')
 
 
 def display_score(score, level):
@@ -38,7 +39,7 @@ def generate_food(snake_list):
     food_y = round(random.randrange(block_size, screen_height - block_size) / block_size) * block_size
     
     # generate random weight for food
-    food_weight = random.randint(1, 5)
+    food_weight = random.randint(1, 3)
     
     # check if the food would spawn on top of the snake
     while [food_x, food_y] in snake_list:
@@ -137,6 +138,7 @@ def snake_game():
             food_pos = [food_x, food_y]
             # increase snake length
             snake_length += 1
+            score_sound.play()
         
         # update snake list with new position
         snake_head = [snake_x, snake_y]
@@ -168,10 +170,25 @@ def snake_game():
         # check for level up
         if score >= level * 10:
             level += 1
-            speed += 5
         
         # set game clock speed and tick
         clock.tick(speed)
+        
+    if game_over:
+        game_screen.fill(pygame.Color(0,0,0))
+        font_go = pygame.font.SysFont('Times New Roman', 60)
+        text_go = font_go.render('Game Over', True, pygame.Color('red'))
+        game_screen.blit(text_go, (screen_width/2 - text_go.get_width()/2, screen_height/2 - text_go.get_height()/2))
+        font_score = pygame.font.SysFont('Arial', 30)
+        text_score = font_score.render('Final Score: ' + str(score), True, pygame.Color('red'))
+        game_screen.blit(text_score, (screen_width/2 - text_score.get_width()/2, screen_height/2 + text_score.get_height()/2))
+        pygame.mixer.init()
+        game_over_sound = pygame.mixer.Sound('data/gameover.wav')
+
+    pygame.display.flip()
+    game_over_sound.play()
+    # Wait for 4 seconds before closing the game window
+    time.sleep(4)
     
     # quit pygame and close window
     pygame.quit()
